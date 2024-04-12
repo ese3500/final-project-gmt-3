@@ -51,22 +51,22 @@ Reliability and Accuracy
 
 Formulate key software requirements here.
 
--User Authentication: Allow players to register and log in to the game.
--Question Submission: Enable players to submit and categorize truth or dare questions.
--Question Randomization Algorithm: Shuffle and present questions randomly to players.
--Lie Detection: Analyze biometric data to assess the truthfulness of responses.
--Result Display: Show the lie detector's verdict and update the game status accordingly.
--Penalty Enforcement: Administer a mild electric shock for untruthful answers, with safety measures in place.
+-Question Submission: We have 2 arrays with Truth and Dare questions respectively, and we have 
+-Question Randomization Algorithm: The questions are chosen randomly
+-Display of the questions, and game mode on an LCD screen
+-Lie Detection: Analyze biometric data coming from the heart rate sensor to assess the truthfulness of responses.
+-Result Display: Show the lie detector's verdict via the servo monitor
+-Penalty Enforcement: We will have a buzzer with an awful sound when theres a lie
 
 ### 5. Hardware Requirements Specification (HRS)
 
 Formulate key hardware requirements here.
 
 -Heart rate monitor: To record changes in heart rate during the game.
--GSR sensor: To measure changes in sweat production, indicating stress or deception.
--A screen to show questions, options, and results.
--Electric shock module: A safe, low-voltage system to administer mild shocks, with adjustable intensity and safety cutoffs.
+-LCD Screen: ST7735
+-Buzzer: As a punishment when someone is lying
 -Servo motor: To indicate the result (Truth or Lie) visually by moving a pointer or indicator.
+-Buttons to change the mode (TRUTH or DARE) and move on to the next player
 
 ### 6. MVP Demo
 
