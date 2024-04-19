@@ -51,7 +51,6 @@ Reliability and Accuracy
 
 Formulate key software requirements here.
 
--Question Submission: We have 2 arrays with Truth and Dare questions respectively, and we have 
 -Question Randomization Algorithm: The questions are chosen randomly
 -Display of the questions, and game mode on an LCD screen
 -Lie Detection: Analyze biometric data coming from the heart rate sensor to assess the truthfulness of responses.
