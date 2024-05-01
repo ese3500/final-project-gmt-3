@@ -133,11 +133,20 @@ If you’ve never made a Github pages website before, you can follow this webpag
 
 ### 1. Video
 
-[Insert final project video here]
+https://github.com/ese3500/final-project-gmt-3/assets/120141948/211ffbf7-280c-4459-b9a0-64e16141ad60
+
 
 ### 2. Images
 
-[Insert final project images here]
+Glove with Atmega328pb AVR xplained board attached to it along with the heart rate monitor:
+
+![IMG_0606](https://github.com/ese3500/final-project-gmt-3/assets/120141948/1173bdac-541b-4fc4-839f-b7a231f207a2)
+
+The game box with two bottons one to switch modes and another to go to the next question. Including a monitor to display the state of the game such as the current mode and question. It also includes a servo and buzzer as a way to indicate truth or lie.
+
+![IMG_0605](https://github.com/ese3500/final-project-gmt-3/assets/120141948/9f6965c7-e5ce-4302-bbae-90e034043467)
+
+
 
 ### 3. Results
 
