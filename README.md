@@ -165,7 +165,7 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 **-LCD Screen Library:** We used the same graphics library that we created on lab 4, since we are using the same LCD screen and the library could handle our display requirements. We were able to test the outputs by seeing that it displays the game mode and question correctly.
 
-**-Serial/Wired Communication:** For the serial communication we used UART to connect the two AVR boards. We used the 8 data bits, no parity, 1 stop bit both on the transmitter and receiver end. We continuously send the most recent analysis result from the Atmega on the glove(a truth denoted by "T" or a Lie "L"). On the other end 
+**-Serial/Wired Communication:** For the serial communication we used UART to connect the two AVR boards. We used the 8 data bits, no parity, 1 stop bit both on the transmitter and receiver end. We continuously send the most recent analysis result from the Atmega on the glove(a truth denoted by "T" or a Lie "L"). On the other Atmega (gamebox) we regularly poll the UART by doing a read each time we are in "Truth mode" and the "next question" button is pressed. Depending on whether a truth or lie is detected we handle the logic that controls the servo and LED.
 
 ![image_2024-05-01_04-55-30](https://github.com/ese3500/final-project-gmt-3/assets/120141948/6aeb35e4-56b3-45fd-887a-791891f56432)
 
@@ -187,6 +187,19 @@ https://drive.google.com/file/d/1izySs9cdAPYWGXXA1dDznRrSIScLzNJf/view?usp=shari
 #### 3.2 Hardware Requirements Specification (HRS) Results
 
 Based on your quantified system performance, comment on how you achieved or fell short of your expected hardware requirements. You should be quantifying this, using measurement tools to collect data.
+
+**-Button 1:** This is the MODE pull up button. Upon the pressing and releasing of this button an interrupts is triggered (set to get triggered when there is a rising or falling edge), which then increments the game mode variable. This was testable by an LED that we used to see if the button changes were being captured and by testing to see if the game mode variable was set correctly.
+
+**-Button 2:** This is the NEXT QUESTION pull up button. Upon the pressing and releasing of this button an interrupts is triggered (set to get triggered when there is a rising or falling edge), which then increments the request new question variable. This was testable by an LED that we used to see if the button changes were being captured and by testing to see if the next question variable was set correctly to true (1).
+
+**-LCD Screen:** We are using an LCD screen of type ST7735, which uses SPI for data transmission. The graphics library that we mentioned in the SRS, was sending the questions and the game mode to the screen. This was tested successfully by seeing the changes in what is displayed in the screen and the fact that questions were not overlapping each other.
+
+**-Servo Motor:** We used fast PWM mode and were setting OCR2B, so that the servo motor moves between 2 positions (lie and truth-left and right). We were able to test that the pwm initialization together with the angle and the servo movement was successful by observing the angle of the servo and that it moved to the correct place based on the input to it.
+
+**-Heart Rate Monitor:**
+
+-whatever else
+**-Buzzer:** We used the internally driven buzzer as a punishment and an indicator of a lie. We connected it to a pin that we set to high if the answer was a lie. This was testable by using the data visualizer of microchip, which showed if we were receiving an L from the serial communication which then successfully turned the buzzer on.
 
 ### 4. Conclusion
 
