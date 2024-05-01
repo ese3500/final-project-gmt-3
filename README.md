@@ -154,6 +154,17 @@ What were your results? Namely, what was the final solution/design to your probl
 #### 3.1 Software Requirements Specification (SRS) Results
 
 Based on your quantified system performance, comment on how you achieved or fell short of your expected software requirements. You should be quantifying this, using measurement tools to collect data.
+-Storing Questions: We have 2 arrays which store truth and lie questions. Whenever a truth question is requested to be displayed we access the truth array and whenever a dare question is requested we access the dare array. This is testable by the questions that are displayed and we could differentiate by seeing if the question we got was actually a truth or a dare question.
+-Randomizing Questions: We are using the built-in c rand() function to pick random questions each time that a question is being requested. We had to adjust it to only give integer answers between 0 and array.length-1. This was also testable during the display, since the questions were well shuffled and we were not getting the same few questions over and over but we had a wide variety of questions.
+-Displaying Game Mode: The display of the game mode happens each time that the MODE button is pressed. Each time that this button is pressed we have a variable that increments itself and even numbers correspond to truth mode and odd numbers correspond to dare mode. Then depending on which mode we are in, we use the LCD screen library to display it. This was tested by seeing the successful switch between TRUTH and DARE on the LCD screen each time that the MODE button is pressed. 
+-Displaying Questions: The display of the questions is happening when the user is requesting a new question. That happens by reading the input of the NEXT QUESTION button (as specified in the HRS) which when the button is pressed we set a variable to 1 meaning that the user has requested a new question. Then based on the game mode variable and the question randomization, we pick a random question, clear the screen from the previous question and display it on the screen. This was testable by the LCD screen output where we 
+-LCD Screen Library: We used the same graphics library that we created on lab 4, since we are using the same LCD screen and the library could handle our display requirements. We were able to test the outputs by seeing that it displays the game mode and question correctly.
+-Lie Detection:
+-Serial/Wired Communication:
+-Heart Beat Analysis:
+-Result Display: The result display happened by receiving a T or L via the serial communication and then based on that we power up the buzzer and make the servo motor turn to either Liar or Squealer depending on the outcome. We were able to test that by seeing the inputs of the serial communication in the data visualizer and based on that see if the buzzer should buzz, and where the servo motor should be pointing and they were both functioning as expected.
+-Penalty Enforcement: When we received an L from the serial communication, we turned the buzzer on, emitting a loud and annoying sound, which was verified by other people to be annoying, so we tested it that way.
+
 
 #### 3.2 Hardware Requirements Specification (HRS) Results
 
