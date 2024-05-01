@@ -132,6 +132,7 @@ Don't forget to make the GitHub pages public website!
 If you’ve never made a Github pages website before, you can follow this webpage (though, substitute your final project repository for the Github username one in the quickstart guide):  <https://docs.github.com/en/pages/quickstart>
 
 ### 1. Video
+https://drive.google.com/file/d/1CXbteqhHgOuDSwedZIaaMVsTIeWjQJRV/view?usp=sharing
 
 https://github.com/ese3500/final-project-gmt-3/assets/120141948/211ffbf7-280c-4459-b9a0-64e16141ad60
 
