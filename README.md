@@ -149,7 +149,14 @@ The game box with two bottons one to switch modes and another to go to the next 
 
 ### 3. Results
 
-What were your results? Namely, what was the final solution/design to your problem?
+Our results were fairly satisfactory. The initial problem we set out to adress was to make sure that the integrity of the truth part of the game is kept, along with adding another level of fun and excitement to the game. We would say that we have achieved this. Just like every initial version of a project we were happy with a few things and not so much with others.
+Happy: - Our initial plan of approach to this project was to modularize it (break it down to smaller parts) so that we are able to solve it one at a time and have rigorous testing. We are very happy about how we did this. We had several parts that we divided such as UART Communication, Heart rate sensing and analysis, Game Logic and user interface. This made it very easy to test each of these aspects independently which worked flawlessly. We faced some hickups with integraton hell with pin allocation and delays but we were able to sort it out. 
+
+Not Happy: - Simply said, the heart rate monitor we chose was a big mistake. It is increadibly finicky, and acted as the sole point of faliure in our entire system. The rest of our system is perfectly functional. But after the demo we were able to improve on making it more stable by cleaning the surface and the hand before each read and narrowing down the perfect spot to place the sensor. With this we were able to see increadible improvement of stability which is demonstrated on our demo video.
+
+Over all we beleive this project was very fun to make and with further refinement could bring more fun to people who play it.
+
+
 
 #### 3.1 Software Requirements Specification (SRS) Results
 
@@ -171,7 +178,7 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 
 **-Heart Beat Analysis and Lie Detection:**
-Here we use the Atmega328PB's internal ADC to measure the varying voltage that is coming from the heart rate monitor's signal line. After reading the data we observed its patterns and noticed that a heart beat happens each time the values exceed a threshold of around 550 units. We register this as a beat and we use an interrupt to measure the time between consecutive beats and simply calculate a running beats per minute. We then use this value's varying value of bpm as a way to measure whether a person is lying or not since peoples bpm tends to rise when they are caught in a lie. 
+After reading the data from ADC we observed its patterns and noticed that a heart beat happens each time the values exceed a threshold of around 550 units. We register this as a beat and we use an interrupt to measure the time between consecutive beats and simply calculate a running beats per minute. We then use this value's varying value of bpm as a way to measure whether a person is lying or not since peoples bpm tends to rise when they are caught in a lie. 
 
 When it comes to testing this part we used Apple watch's bpm as a bench mark to measure the acuracy of our HRM sensor setup. We were often with in about 7% of what the Smart Watch was reporting. There seemed to be some sort of a delay in propagation of changes which was cool. We think this might be because the Watch is measuring closer to source, it might also be that we have a lot of relative delay in how fast we detect and calculate. 
 
@@ -196,7 +203,7 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 **-Servo Motor:** We used fast PWM mode and were setting OCR2B, so that the servo motor moves between 2 positions (lie and truth-left and right). We were able to test that the pwm initialization together with the angle and the servo movement was successful by observing the angle of the servo and that it moved to the correct place based on the input to it.
 
-**-Heart Rate Monitor:**
+**-Heart Rate Monitor:** Here we use the Atmega328PB's internal ADC to measure the varying voltage that is coming from the heart rate monitor's signal line. As mentioned and demonstrated above, to test, we measured the accuracy of our heart rate sensor by comparing it against a state of the art Apple Watch. 
 
 -whatever else
 **-Buzzer:** We used the internally driven buzzer as a punishment and an indicator of a lie. We connected it to a pin that we set to high if the answer was a lie. This was testable by using the data visualizer of microchip, which showed if we were receiving an L from the serial communication which then successfully turned the buzzer on.
