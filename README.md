@@ -195,6 +195,8 @@ https://drive.google.com/file/d/1izySs9cdAPYWGXXA1dDznRrSIScLzNJf/view?usp=shari
 
 Based on your quantified system performance, comment on how you achieved or fell short of your expected hardware requirements. You should be quantifying this, using measurement tools to collect data.
 
+**Atmega328pb AVR- Xplained board: ** With the requirement of doing everything on bare metal, we ended up using two Atmega boards. We power them directly using their micro usb from a computer or a power bank. 
+
 **-Button 1:** This is the MODE pull up button. Upon the pressing and releasing of this button an interrupts is triggered (set to get triggered when there is a rising or falling edge), which then increments the game mode variable. This was testable by an LED that we used to see if the button changes were being captured and by testing to see if the game mode variable was set correctly.
 
 **-Button 2:** This is the NEXT QUESTION pull up button. Upon the pressing and releasing of this button an interrupts is triggered (set to get triggered when there is a rising or falling edge), which then increments the request new question variable. This was testable by an LED that we used to see if the button changes were being captured and by testing to see if the next question variable was set correctly to true (1).
@@ -203,7 +205,7 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 **-Servo Motor:** We used fast PWM mode and were setting OCR2B, so that the servo motor moves between 2 positions (lie and truth-left and right). We were able to test that the pwm initialization together with the angle and the servo movement was successful by observing the angle of the servo and that it moved to the correct place based on the input to it.
 
-**-Heart Rate Monitor:** Here we use the Atmega328PB's internal ADC to measure the varying voltage that is coming from the heart rate monitor's signal line. As mentioned and demonstrated above, to test, we measured the accuracy of our heart rate sensor by comparing it against a state of the art Apple Watch. 
+**-Heart Rate Monitor:** Here we use the Atmega328PB's internal ADC to measure the varying voltage that is coming from the heart rate monitor's signal line. As mentioned and demonstrated above, to test, we measured the accuracy of our heart rate sensor by comparing it against a state of the art Apple Watch getting accurate with 7% margin of error. 
 
 -whatever else
 **-Buzzer:** We used the internally driven buzzer as a punishment and an indicator of a lie. We connected it to a pin that we set to high if the answer was a lie. This was testable by using the data visualizer of microchip, which showed if we were receiving an L from the serial communication which then successfully turned the buzzer on.
