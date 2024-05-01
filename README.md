@@ -214,6 +214,9 @@ Based on your quantified system performance, comment on how you achieved or fell
 
 Reflect on your project. Some questions to consider: What did you learn from it? What went well? What accomplishments are you proud of? What did you learn/gain from this experience? Did you have to change your approach? What could have been done differently? Did you encounter obstacles that you didn’t anticipate? What could be a next step for this project?
 
+
+Overall the problem we identified was the fact that the truth or dare game has no accountability, and our project aimed to make a better and more accurate version of the game. We were able to successfully connect the fun display equipment together with the actual heart rate monitor input and the analysis of the heart rate, and incorporate them, such that the game runs smoothly and bug-free. We tried to ensure that the user experience is high and that the output results are as accurate as possible. On that note, the heart rate sensor that we had was not the best or the most accurate, and at some points it was malfunctioning. Thus, we know that we can enhance our project and will try to make updates like getting a better  heart rate monitor interms of accuracy and add other sources of data such as diaphragm sensor for breathing patterns, a sweat sensor for perspiration level sensing to get an overall improvement in accuracy of our lie detection. It would also make the project even more fun to add a way for users to input questions via blynk, as well as have an audio playback cursing at players instead of a simple buzzer. All in all, it was a fun project to work on and team work and overcoming technical challenges were invaluable lessons that we both got through it. We are happy to answer any questions about the project and the process of creating it.
+
 ## References
 
 Fill in your references here as you work on your proposal and final submission. Describe any libraries used here.
