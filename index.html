@@ -31,6 +31,19 @@
         .active {
             display: block;
         }
+        .image-container {
+            text-align: center;
+            margin: 1em 0;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            margin-bottom: 0.5em;
+        }
     </style>
 </head>
 <body>
@@ -50,10 +63,14 @@
 
 <div id="Images" class="content">
     <h2>Images</h2>
-    <p>Glove with Atmega328pb AVR xplained board attached to it along with the heart rate monitor:</p>
-    <img src="https://github.com/ese3500/final-project-gmt-3/assets/120141948/1173bdac-541b-4fc4-839f-b7a231f207a2" alt="Glove with Atmega328pb AVR">
-    <p>The game box with two buttons:</p>
-    <img src="https://github.com/ese3500/final-project-gmt-3/assets/120141948/9f6965c7-e5ce-4302-bbae-90e034043467" alt="Game Box">
+            <div class="image-container">
+                <img src="https://github.com/ese3500/final-project-gmt-3/assets/120141948/1173bdac-541b-4fc4-839f-b7a231f207a2" alt="Glove with Atmega328pb AVR xplained board">
+                <p>Glove with Atmega328pb AVR xplained board attached to it along with the heart rate monitor.</p>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/ese3500/final-project-gmt-3/assets/120141948/9f6965c7-e5ce-4302-bbae-90e034043467" alt="Game box">
+                <p>The game box with two buttons to switch modes and go to the next question. It includes a monitor to display the state of the game, such as the current mode and question. It also includes a servo and buzzer to indicate truth or lie.</p>
+            </div>
 </div>
 
 <div id="Results" class="content">
