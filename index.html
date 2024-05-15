@@ -3,202 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project - GMT+3</title>
+    <title>Final Project Report</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
+        .navbar {
             overflow: hidden;
-            padding: 1rem;
+            background-color: #333;
         }
-        .button {
-            display: inline-block;
-            color: white;
-            background: #333;
-            padding: 10px 20px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
             text-decoration: none;
-            cursor: pointer;
         }
-        h1, h2, h3, h4, h5, h6 {
-            color: #333;
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
         }
-        .section {
-            background: white;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        .content {
+            display: none;
+            padding: 20px;
         }
-        .section img {
-            max-width: 100%;
-            height: auto;
+        .active {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Final Project - GMT+3</h1>
-    </header>
-    <div class="container">
-        <div class="section">
-            <h2>Team Information</h2>
-            <ul>
-                <li><strong>Team Name:</strong> GMT+3</li>
-                <li><strong>Team Members:</strong> Kidus Seyoum, Eleftherios Lazarinis</li>
-                <li><strong>Github Repository URL:</strong> <a href="https://github.com/ese3500/final-project-gmt-3" target="_blank">https://github.com/ese3500/final-project-gmt-3</a></li>
-                <li><strong>Github Pages Website URL:</strong> [for final submission]</li>
-                <li><strong>Description of hardware:</strong> Microcontroller, sensors, esp-32, shock module</li>
-            </ul>
-        </div>
 
-        <div class="section">
-            <h2>Abstract</h2>
-            <p>Our project is a modern twist on the classic game of Truth or Dare, where we incorporate a lie detector to add an element of technology and excitement. The game follows the traditional rules, where players take turns choosing between answering a truth question or completing a dare. However, our version adds a technological twist...</p>
-        </div>
+<div class="navbar">
+    <a href="#video" onclick="openTab(event, 'Video')">Video</a>
+    <a href="#images" onclick="openTab(event, 'Images')">Images</a>
+    <a href="#results" onclick="openTab(event, 'Results')">Results</a>
+    <a href="#conclusion" onclick="openTab(event, 'Conclusion')">Conclusion</a>
+    <a href="#references" onclick="openTab(event, 'References')">References</a>
+</div>
 
-        <div class="section">
-            <h2>Motivation</h2>
-            <p>The goal of our project is to enhance the classic game of Truth or Dare by incorporating a lie detector, ensuring accountability and adding an element of technology-driven excitement...</p>
-        </div>
+<div id="Video" class="content">
+    <h2>Video</h2>
+    <iframe src="https://drive.google.com/file/d/1CXbteqhHgOuDSwedZIaaMVsTIeWjQJRV/preview" width="640" height="480"></iframe>
+</div>
 
-        <div class="section">
-            <h2>Goals</h2>
-            <ul>
-                <li>Enhance Player Accountability</li>
-                <li>Integrate Technology</li>
-                <li>Improve Game Engagement</li>
-                <li>Ensure Safety and Ethics</li>
-                <li>User-Friendly Interface</li>
-                <li>Reliability and Accuracy</li>
-            </ul>
-        </div>
+<div id="Images" class="content">
+    <h2>Images</h2>
+    <p>Glove with Atmega328pb AVR xplained board attached to it along with the heart rate monitor:</p>
+    <img src="https://github.com/ese3500/final-project-gmt-3/assets/120141948/1173bdac-541b-4fc4-839f-b7a231f207a2" alt="Glove with Atmega328pb AVR">
+    <p>The game box with two buttons:</p>
+    <img src="https://github.com/ese3500/final-project-gmt-3/assets/120141948/9f6965c7-e5ce-4302-bbae-90e034043467" alt="Game Box">
+</div>
 
-        <div class="section">
-            <h2>Software Requirements Specification (SRS)</h2>
-            <ul>
-                <li>Question Randomization Algorithm</li>
-                <li>Display of the questions and game mode on an LCD screen</li>
-                <li>Lie Detection</li>
-                <li>Result Display</li>
-                <li>Penalty Enforcement</li>
-            </ul>
-        </div>
+<div id="Results" class="content">
+    <h2>Results</h2>
+    <p>Our results were fairly satisfactory. We aimed to ensure the integrity of the truth part of the game and add another level of fun and excitement.</p>
+    <h3>What Went Well:</h3>
+    <ul>
+        <li>We successfully modularized the project into smaller parts such as UART Communication, Heart rate sensing and analysis, Game Logic, and user interface. This made it easy to test each part independently, which worked flawlessly. Despite integration challenges, we managed to sort them out.</li>
+    </ul>
+    <h3>What Didn't Go Well:</h3>
+    <ul>
+        <li>The heart rate monitor we chose was finicky and acted as the sole point of failure. After the demo, we improved its stability by cleaning the surface and hand before each read and finding the optimal spot for the sensor. This led to significant improvements, as shown in our demo video.</li>
+    </ul>
+    <p>Overall, the project was fun to make and with further refinement could bring more enjoyment to players.</p>
+    <h3>Software Requirements Specification (SRS) Results</h3>
+    <p>- Storing Questions: We use two arrays for truth and dare questions. This is testable by the questions displayed.</p>
+    <p>- Randomizing Questions: We use the built-in C rand() function to pick random questions. This was tested during display, ensuring a wide variety of questions.</p>
+    <p>- Displaying Game Mode: The game mode changes with the MODE button and is displayed on the LCD screen.</p>
+    <p>- Displaying Questions: The NEXT QUESTION button triggers a new question display based on the game mode.</p>
+    <p>- LCD Screen Library: We used a graphics library from lab 4 to handle display requirements.</p>
+    <p>- Serial/Wired Communication: UART connects the two AVR boards. We tested by verifying inputs in the data visualizer.</p>
+    <p>- Heart Beat Analysis and Lie Detection: We used the ADC to measure heart rate and detect lies. Our sensor was about 7% accurate compared to an Apple Watch. <a href="https://drive.google.com/file/d/1izySs9cdAPYWGXXA1dDznRrSIScLzNJf/view?usp=sharing" target="_blank">Watch the heart rate monitor demo</a>.</p>
+    <p>- Result Display: The result display functioned as expected based on serial communication inputs.</p>
+    <p>- Penalty Enforcement: An annoying buzzer sound indicated a lie, tested successfully by others.</p>
+    <h3>Hardware Requirements Specification (HRS) Results</h3>
+    <p>- Atmega328pb AVR- Xplained board: Powered via micro USB.</p>
+    <p>- Button 1: MODE button triggers an interrupt, tested by an LED indicator.</p>
+    <p>- Button 2: NEXT QUESTION button triggers an interrupt, tested by an LED indicator.</p>
+    <p>- LCD Screen: SPI transmission for game mode and question display.</p>
+    <p>- Servo Motor: Fast PWM mode to move between two positions (lie and truth). Tested by observing the servo movement.</p>
+    <p>- Heart Rate Monitor: ADC measures varying voltage for heart rate detection, with 7% accuracy compared to an Apple Watch.</p>
+    <p>- Buzzer: Used to indicate a lie, tested via the data visualizer.</p>
+</div>
 
-        <div class="section">
-            <h2>Hardware Requirements Specification (HRS)</h2>
-            <ul>
-                <li>Heart rate monitor</li>
-                <li>LCD Screen</li>
-                <li>Buzzer</li>
-                <li>Servo motor</li>
-                <li>Buttons to change the mode and move on to the next player</li>
-            </ul>
-        </div>
+<div id="Conclusion" class="content">
+    <h2>Conclusion</h2>
+    <p>Reflecting on the project, we aimed to improve the truth or dare game by adding accountability. We successfully connected display equipment with heart rate monitor input and analysis to create a smooth, bug-free game. Despite challenges with the heart rate sensor, we improved its accuracy and stability. Future enhancements could include a more accurate heart rate monitor, additional sensors for better lie detection, and user input for questions via Blynk. The project was a valuable learning experience in teamwork and technical problem-solving.</p>
+</div>
 
-        <div class="section">
-            <h2>MVP Demo</h2>
-            <p>We hope that the lie detector would be fully functional.</p>
-        </div>
+<div id="References" class="content">
+    <h2>References</h2>
+    <p>Fill in your references here as you work on your proposal and final submission. Describe any libraries used here.</p>
+</div>
 
-        <div class="section">
-            <h2>Final Demo</h2>
-            <p>The truth or dare game, with most (hopefully all) of the features of the game, both on the software side but also on the hardware side.</p>
-        </div>
+<script>
+    function openTab(evt, tabName) {
+        var i, content, tablinks;
+        content = document.getElementsByClassName("content");
+        for (i = 0; i < content.length; i++) {
+            content[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("navbar a");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
 
-        <div class="section">
-            <h2>Methodology</h2>
-            <p>We first analyzed the requirements for the project and figured out how we could best tackle the problem in an interesting and innovative way...</p>
-        </div>
+    // Open the first tab by default
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector(".navbar a").click();
+    });
+</script>
 
-        <div class="section">
-            <h2>Components</h2>
-            <ul>
-                <li>Microcontroller</li>
-                <li>Servo Motor</li>
-                <li>Heart Rate Monitor</li>
-                <li>GSR Monitor</li>
-                <li>Electric Shock Module</li>
-                <li>Screen</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Evaluation</h2>
-            <p>To evaluate the effectiveness of our Truth or Dare game with a lie detector, we need to consider several metrics beyond a simple "it works" assessment...</p>
-        </div>
-
-        <div class="section">
-            <h2>Timeline</h2>
-            <table>
-                <tr>
-                    <th>Week</th>
-                    <th>Task</th>
-                    <th>Assigned To</th>
-                </tr>
-                <tr>
-                    <td>Week 1: 3/24 - 3/31</td>
-                    <td>Component Search/ Order</td>
-                    <td>Both</td>
-                </tr>
-                <tr>
-                    <td>Week 2: 4/1 - 4/7</td>
-                    <td>Code for Lie Detector</td>
-                    <td>Both</td>
-                </tr>
-                <tr>
-                    <td>Week 3: 4/8 - 4/14</td>
-                    <td>Code for software</td>
-                    <td>Both</td>
-                </tr>
-                <tr>
-                    <td>Week 4: 4/15 - 4/21</td>
-                    <td>Assembling hardware/Testing lie detector</td>
-                    <td>Both</td>
-                </tr>
-                <tr>
-                    <td>Week 5: 4/22 - 4/26</td>
-                    <td>Putting it all together/ Debugging & Improving the code for everything</td>
-                    <td>Both</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="section">
-            <h2>Proposal Presentation</h2>
-            <p><a href="https://docs.google.com/presentation/d/1POS2FrLU4fazUkQQjPzKI0OL3KIg7X1V2p2VRbRrQFw/edit?usp=sharing" target="_blank" class="button">View Slides</a></p>
-        </div>
-
-        <div class="section">
-            <h2>Final Project Report</h2>
-            <h3>Video</h3>
-            <p><a href="https://drive.google.com/file/d/1CXbteqhHgOuDSwedZIaaMVsTIeWjQJRV/view?usp=sharing" target="_blank" class="button">Watch Video</a></p>
-            <h3>Images</h3>
-            <img src="https://github.com/ese3500/final-project-gmt-3/assets/120141948/1173bdac-541b-4fc4-839f-b7a231f207a2" alt="Glove with Atmega328pb AVR xplained board">
-            <img src="https://github.com/ese3500/final-project-gmt-3/assets/120141948/9f6965c7-e5ce-4302-bbae-90e034043467" alt="Game box with buttons">
-        </div>
-
-        <div class="section">
-            <h2>Results</h2>
-            <p>Our results were fairly satisfactory. The initial problem we set out to address was to make sure that the integrity of the truth part of the game is kept, along with adding another level of fun and excitement to the game...</p>
-        </div>
-
-        <div class="section">
-            <h2>Conclusion</h2>
-            <p>Overall the problem we identified was the fact that the truth or dare game has no accountability
+</body>
+</html>
